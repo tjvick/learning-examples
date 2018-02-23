@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>D3 Example 1</title>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded|Permanent+Marker" rel="stylesheet">
+    <link rel='stylesheet' href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><span class="FI">FI</span><span class="math">math</span></h1>
+    </header>
+    <main>
+      <h2>Some Calculator</h2>
+      <article>
+        <form>
+          <div>
+            <label for="return-rate">Rate of Return:</label>
+            <input type="text" id="return-rate" name="return_rate" value="5"/>
+            <p class="unit">%</p>
+          </div>
+          <div>
+            <label for="withdrawal-rate">Rate of Withdrawal:</label>
+            <input type="text" id="withdrawal-rate" name="withdrawal_rate" value="4"/>
+            <p class="unit">%</p>
+          </div>
+          <div>
+            <label for="years-to-last">Years to Last:</label>
+            <input type="text" id="years-to-last" name="years_to_last" value="100"/>
+            <p class="unit">years</p>
+          </div>
+        </form>
+        <div id="wrapper">
+          <svg class="chart">
+            <!-- chart goes here -->
+          </svg>
+        </div>
+      </article>
+    </main>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

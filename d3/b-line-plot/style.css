@@ -1,0 +1,131 @@
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+body {
+  width: 70%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-sizing: content-box;
+  border-left: 1px solid hsl(0, 90%, 50%);
+  border-right: 1px solid hsl(0, 90%, 50%);
+}
+
+/* HEADER FORMATTING */
+header {
+  /* position fixed to top - requires top margin on next element */
+  position: fixed;
+  top: 0;
+  /* width same as body */
+  width: 70%;
+  max-width: 980px;
+  /*  */
+  background-color: white;
+  box-sizing: border-box;
+  border-bottom: 1px solid blue;
+}
+
+/* header text formatting */
+header h1 {
+  text-align: center;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+header h1 .FI {
+  font-family: 'BioRhyme Expanded', serif;
+  font-weight: normal;
+  margin-right: 0.2em;
+}
+
+header h1 .math {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 0.05em;
+  color: hsl(0, 90%, 50%);
+}
+
+/* MAIN SECTION FORMATTING */
+main {
+  /* to accommodate fixed header */
+  margin-top: calc(2.5rem*1.54 + 2rem);
+}
+
+main .heading {
+  border-bottom: 1px solid blue;
+}
+
+main .heading h2 {
+  margin: 0;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  font-size: 2rem;
+  text-align: left;
+}
+
+main article {
+  padding-top: 2rem;
+}
+
+/* FORM FORMATTING */
+main form {
+  margin: 0 auto;
+  width: 400px;
+}
+
+main form div {
+  width: 100%;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+main form div > * {
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+main form label {
+  width: 50%;
+  text-align: right;
+}
+
+main form input {
+  width: 20%;
+  text-align: right;
+  border: 1px solid gray;
+  border-radius: 1px;
+  padding-right: 0.2em;
+}
+
+/* CHART FORMATTING */
+#wrapper {
+  overflow: auto;
+}
+
+.chart {
+  background-color: rgba(0,0,0,0.1);
+  color: black;
+}
+
+.axis text {
+  font: 14px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis .hovertick text {
+  font: 14px sans-serif;
+  text-align: center;
+  fill: white;
+}
