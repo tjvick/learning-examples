@@ -103,7 +103,6 @@ function calcData(rr, rw, yearsToLast) {
   var nYearsInfinite = savingsRates.map(calcYearsInfinite)
 
   var nYearsFinite = savingsRates.map(calcYearsFinite)
-  console.log(nYearsFinite[0])
 
   return {
     savingsRates: savingsRates,
@@ -208,7 +207,7 @@ function update(rr, rw, yearsToLast) {
 
   // setup x-scaling
   var xScale = d3.scale.linear().range([0, width])
-  var xMap = function(d, i) { return xScale(i / 100) }
+  var xMap = function(d, i) { return xScale((i+1) / 100) }
   var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
   // setup y-scaling
