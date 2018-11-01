@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Vending Machine Change Calculator TDD Tutorial</title>
+    <!-- Load the QUnit CSS file from CDN - Require to display our tests attractively -->
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css">
+    <!-- Pure CSS is a minimalist CSS file we have included to make things look nicer -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  </head>
+  <body style='margin: 0 1em;'>
+    <div id='main'>
+      <h1>Vending Machine <em>Change Calculator</em></h1>
+      <h2>Calculate the change (<em>coins</em>) to return to a customer when they buy something.</h2>
+    </div>
+
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <!-- Load the QUnit Testing Framework from CDN - this is the important bit ... -->
+    <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+    <script>
+      function getHighestCoin(value) {
+        var coins = [200, 100, 50, 20, 10, 5, 2, 1];
+        for (var ix = 0; ix <= coins.length; ix++) {
+          if (coins[ix] <= value) {
+            return coins[ix]
+          }
+        }
+      }
+
+      function getChange(totalPayable, cashPaid) {
+        var change = [];
+        var difference = cashPaid - totalPayable;
+
+        while (difference !== 0) {
+          var highest = getHighestCoin(difference);
+          change.push(highest);
+          difference -= highest;
+        }
+
+        return change;
+      }
+    </script>
+    <script>
+      // This is what a simple unit test looks like:
+      test('getChange(1,1) should equal [] - an empty array', function(assert) {
+        var result = getChange(1,1);
+        var expected = [];
+        assert.deepEqual(result, expected);
+      })
+
+      test('getChange(215, 300) should return [50, 20, 10, 5]', function(assert) {
+        var result = getChange(215, 300);
+        var expected = [50, 20, 10, 5];
+        assert.deepEqual(result, expected);
+      })
+
+      test('getChange(486, 600) should equal [100, 10, 2, 2]', function(assert) {
+        var result = getChange(486, 600);
+        var expected = [100, 10, 2, 2];
+        assert.deepEqual(result, expected);
+      })
+
+      test('getChange(12, 400) should return [200, 100, 50, 20, 10, 5, 2, 1]', function(assert) {
+        var result = getChange(12, 400);
+        var expected = [200, 100, 50, 20, 10, 5, 2, 1];
+        assert.deepEqual(result, expected);
+      });
+    </script>
+  </body>
