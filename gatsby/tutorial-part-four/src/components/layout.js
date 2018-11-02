@@ -1,6 +1,7 @@
 import React from "react"
 import { css } from "react-emotion"
 import { StaticQuery, Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet";
 
 import { rhythm } from "../utils/typography"
 
@@ -25,6 +26,11 @@ export default ({ children }) => (
         padding-top: ${rhythm(1.5)};
       `}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Panda Candy</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Link to={`/`}>
         <h3
           className={css`
